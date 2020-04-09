@@ -4,7 +4,7 @@
  * @Email:  ctosterhout@alaska.edu
  * @Project: self-placement
  * @Last modified by:   ctosterhout
- * @Last modified time: 2020-04-08T18:33:00-08:00
+ * @Last modified time: 2020-04-09T07:30:29-08:00
  * @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
  */
 
@@ -16,10 +16,10 @@ const loadParameters = require('ernie-build').fnLoadParameters(path.join(__dirna
 const vueDefaultConfig = require('ernie-build').vueConfigGenerator(__dirname);
 const templateParameterDefaults = require('ernie/packages/common/config/template-parameter-defaults');
 const bodySelfPlacement = `
-<div class="alert alert-secondary">
-  <h2>Testing!</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores dolorem maxime neque harum aliquid cumque ipsa tempora perspiciatis. Quod, iure!</p>
-</div>
+<script id="componentSelfPlacement" type="text/x-template">
+    <SelfPlacement />
+  </script>
+  <div data-template="componentSelfPlacement"></div>
 `
 
 const pages = {
