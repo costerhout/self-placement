@@ -4,7 +4,7 @@
 @Email:  ctosterhout@alaska.edu
 @Project: ernie
 @Last modified by:   ctosterhout
-@Last modified time: 2020-04-09T15:37:25-08:00
+@Last modified time: 2020-04-09T19:38:27-08:00
 @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
 -->
 
@@ -16,42 +16,52 @@
                     enter-active-class="animated fadeIn"
                     leave-active-class="d-none"
                     mode="out-in">
-    <div class="self-placement-screen"
+    <div class="self-placement-screen card"
          v-for="screen in screens"
          v-show="screen.id === currentScreen.id"
          :key="screen.id">
-      <div class="screen-question"
-        v-if="screen.type === 'question'">
-        <b-form-group :label="screen.title"
-                      label-size="lg"
-                      class="form-section">
-          <p class="question-text"><span class="question-id">{{ screen.id }}</span>: {{ screen.text }}</p>
-          <b-form-radio-group :options="screen.answers"
-                              v-model="answers[screen.id]"
-                              stacked></b-form-radio-group>
-        </b-form-group>
+      <div class="card-body">
+        <div class="screen-question"
+          v-if="screen.type === 'question'">
+          <b-form-group :label="screen.title"
+                        label-size="lg"
+                        class="form-section">
+            <h3 class="question-text"><span class="question-id">{{ screen.id }}</span>: {{ screen.text }}</h3>
+            <b-form-radio-group :options="screen.answers"
+                                v-model="answers[screen.id]"
+                                stacked></b-form-radio-group>
+          </b-form-group>
+        </div>
+        <div class="screen-information"
+          v-if="screen.type === 'information'">
+          <h2 class="card-title">{{ screen.title }}</h2>
+          <div v-if="screen.text" v-html="screen.text"></div>
+        </div>
+        <div v-if="screen.type === 'answer'" class="screen-answer">
+          <h2 class="card-title">{{ screen.title }}</h2>
+          <SelfPlacementAnswerKey :score="score" :answer-key="screen.answerKey">
+            <div v-html="screen.text"></div>
+          </SelfPlacementAnswerKey>
+        </div>
+        <div class="screen-navigation d-flex flex-row justify-content-beginning">
+          <button v-if="currentScreen.id !== idInit"
+                  @click="goBack()"
+                  class="btn btn-secondary btn-circle mx-1"><span class="sr-only">Go Back to Previous Question</span>
+            <Icon name="chevron-left"
+                  scale="1.35" /></button>
+          <button v-if="currentScreen.type !== 'answer'"
+                  @click="goNext()"
+                  class="btn btn-secondary btn-circle mx-1"><span class="sr-only">Go Back to Previous Question</span>
+            <Icon name="chevron-right"
+                  scale="1.35" /></button>
+          <button v-if="history.length > 1"
+                  @click="reset()"
+                  class="btn btn-outline-secondary btn-circle mx-1 border-0"><span class="sr-only">Reset</span>
+            <Icon name="undo-alt"
+                  scale="1.35" /></button>
+        </div>
+            </div>
       </div>
-      <div v-else class="screen-answer">
-        Great job: {{ score }}
-      </div>
-      <div class="screen-navigation d-flex flex-row justify-content-beginning">
-        <button v-if="currentScreen.id !== idInit"
-                @click="goBack()"
-                class="btn btn-secondary btn-circle mx-1"><span class="sr-only">Go Back to Previous Question</span>
-          <Icon name="chevron-left"
-                scale="1.35" /></button>
-        <button v-if="currentScreen.type !== 'answer'"
-                @click="goNext()"
-                class="btn btn-secondary btn-circle mx-1"><span class="sr-only">Go Back to Previous Question</span>
-          <Icon name="chevron-right"
-                scale="1.35" /></button>
-        <button v-if="history.length > 1"
-                @click="reset()"
-                class="btn btn-outline-secondary btn-circle mx-1 border-0"><span class="sr-only">Reset</span>
-          <Icon name="undo-alt"
-                scale="1.35" /></button>
-      </div>
-    </div>
   </transition-group>
 </div>
 </template>
@@ -64,9 +74,6 @@
 
 // Incorporate the card formatting taken from Bootstrap's source rather than @extending as the semantics don't line up well
 .form-section {
-    border: $card-border-width solid $card-border-color;
-    @include border-radius($card-border-radius);
-
     padding: $card-spacer-x;
 }
 
@@ -89,14 +96,46 @@
 @include media-breakpoint-up(lg) {}
 </style>
 
+<style lang="scss">
+.screen-question .custom-control-label {
+    margin: 0.5rem 0;
+}
+</style>
+
 <script>
 import fnIdgen from 'ernie-core/js/idgen'
-import questions from '../js/part1-questions'
+import screens from '../js/screens'
 import _ from 'lodash'
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/chevron-left'
 import 'vue-awesome/icons/chevron-right'
 import 'vue-awesome/icons/undo-alt'
+
+const SelfPlacementAnswerKey = {
+  name: 'SelfPlacementAnswerKey',
+  props: {
+    answerKey: {
+      type: Array,
+      required: true
+    },
+    score: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    answer: function () {
+      // Sort the answers by their cutoff, then find the last one for which the score is >= than the cutoff
+      const answersSorted = _.sortBy(this.answerKey, ['cutoff'])
+      return _.findLast(answersSorted, answer => this.score >= answer.cutoff)
+    }
+  },
+  template: `
+    <div class="self-placement-answer">
+      <div v-html="answer.text"></div>
+    </div>
+  `
+}
 
 export default {
   name: 'SelfPlacement',
@@ -109,7 +148,7 @@ export default {
   },
   data: function () {
     return {
-      screens: this.buildScreens(questions),
+      screens: screens,
       idInit: undefined,
       history: [],
       answers: {}
@@ -139,18 +178,6 @@ export default {
   },
   methods: {
     idgen: fnIdgen(),
-    buildScreens: function (questions) {
-      return _.flatten([
-        _.map(questions, question => ({
-          ...question,
-          type: 'question'
-        })),
-        {
-          id: this.idgen('answer-screen'),
-          type: 'answer'
-        }
-      ])
-    },
     selectChoice: function (id) {
       this.history.push(id)
     },
@@ -174,7 +201,8 @@ export default {
     }
   },
   components: {
-    Icon
+    Icon,
+    SelfPlacementAnswerKey
   }
 }
 </script>
