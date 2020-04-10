@@ -4,7 +4,7 @@
 @Email:  ctosterhout@alaska.edu
 @Project: ernie
 @Last modified by:   ctosterhout
-@Last modified time: 2020-04-09T11:11:14-08:00
+@Last modified time: 2020-04-09T15:37:25-08:00
 @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
 -->
 
@@ -32,7 +32,7 @@
         </b-form-group>
       </div>
       <div v-else class="screen-answer">
-        {{ score }}
+        Great job: {{ score }}
       </div>
       <div class="screen-navigation d-flex flex-row justify-content-beginning">
         <button v-if="currentScreen.id !== idInit"
