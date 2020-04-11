@@ -4,7 +4,7 @@
 @Email:  ctosterhout@alaska.edu
 @Project: ernie
 @Last modified by:   ctosterhout
-@Last modified time: 2020-04-09T19:38:27-08:00
+@Last modified time: 2020-04-10T18:22:22-08:00
 @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
 -->
 
@@ -17,12 +17,13 @@
                     leave-active-class="d-none"
                     mode="out-in">
     <div class="self-placement-screen card"
+         :style="`min-height: ${minHeight}px`"
          v-for="screen in screens"
          v-show="screen.id === currentScreen.id"
          :key="screen.id">
-      <div class="card-body">
+      <div class="card-body d-flex flex-column justify-content-between">
         <div class="screen-question"
-          v-if="screen.type === 'question'">
+             v-if="screen.type === 'question'">
           <b-form-group :label="screen.title"
                         label-size="lg"
                         class="form-section">
@@ -33,17 +34,22 @@
           </b-form-group>
         </div>
         <div class="screen-information"
-          v-if="screen.type === 'information'">
+             v-if="screen.type === 'information'">
           <h2 class="card-title">{{ screen.title }}</h2>
-          <div v-if="screen.text" v-html="screen.text"></div>
+          <div v-if="screen.text"
+               v-html="screen.text"></div>
         </div>
-        <div v-if="screen.type === 'answer'" class="screen-answer">
+        <div v-if="screen.type === 'answer'"
+             class="screen-answer">
           <h2 class="card-title">{{ screen.title }}</h2>
-          <SelfPlacementAnswerKey :score="score" :answer-key="screen.answerKey">
-            <div v-html="screen.text"></div>
-          </SelfPlacementAnswerKey>
+          <div class="alert alert-secondary">
+            <SelfPlacementAnswerKey :score="score"
+                                    :answer-key="screen.answerKey">
+            </SelfPlacementAnswerKey>
+          </div>
+          <div v-html="screen.text"></div>
         </div>
-        <div class="screen-navigation d-flex flex-row justify-content-beginning">
+        <div class="screen-navigation d-flex flex-row justify-content-center">
           <button v-if="currentScreen.id !== idInit"
                   @click="goBack()"
                   class="btn btn-secondary btn-circle mx-1"><span class="sr-only">Go Back to Previous Question</span>
@@ -60,8 +66,8 @@
             <Icon name="undo-alt"
                   scale="1.35" /></button>
         </div>
-            </div>
       </div>
+    </div>
   </transition-group>
 </div>
 </template>
@@ -144,6 +150,11 @@ export default {
       type: Number,
       required: false,
       default: 500
+    },
+    minHeight: {
+      type: String,
+      required: false,
+      default: '500'
     }
   },
   data: function () {
@@ -186,7 +197,7 @@ export default {
     },
     goNext: function () {
       const indexCurrentScreen = _.findIndex(this.screens, screen => screen.id === this.currentScreen.id)
-      const indexNextScreen = indexCurrentScreen+1
+      const indexNextScreen = indexCurrentScreen + 1
 
       if (indexNextScreen !== this.screens.length) {
         this.selectChoice(this.screens[indexNextScreen].id)
