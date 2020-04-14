@@ -4,7 +4,7 @@
  * @Email:  ctosterhout@alaska.edu
  * @Project: ernie
  * @Last modified by:   ctosterhout
- * @Last modified time: 2020-04-10T18:30:39-08:00
+ * @Last modified time: 2020-04-10T18:38:11-08:00
  * @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
  */
 
@@ -461,7 +461,7 @@ const screens = [{
       <p>If you have already completed your math placement test you are ready to schedule a registration appointment using our <a href="https://docs.google.com/forms/d/e/1FAIpQLSejn1bT2glFikkfd5EaT9kSl8qSyTgmJF-cnplu0KBcP3QRtQ/viewform?usp=sf_link">contact form</a>.</p>
 
       <h3>If you have not already completed the ALEKS Math Placement Test</h3>
-      <p>All new students who have not earned college credit for math or a qualifying AP score must complete the online math placement assessment. The UA math placement assessment is through ALEKS. It is a fully automated, adaptive system that covers material from basic math through pre-calculus.</p>
+      <p>All new students who have not earned college credit for math or a <a href="http://catalog.uas.alaska.edu/registration/credit-by-examination/#advancedplacementcreditthroughcollegeentranceexaminationboardceebtext">qualifying AP score</a> must complete the online math placement assessment. The UA math placement assessment is through <a href="https://www.alaska.edu/aleks/">ALEKS</a>. It is a fully automated, adaptive system that covers material from basic math through pre-calculus.</p>
 
       <p><em>Students can take this assessment up to 5 times. We encourage every student to complete the assessment at least twice.</em></p>
       <p>If you have any questions, please submit your information via the <a href="https://docs.google.com/forms/d/e/1FAIpQLSejn1bT2glFikkfd5EaT9kSl8qSyTgmJF-cnplu0KBcP3QRtQ/viewform?usp=sf_link">advisor contact form</a></p>

@@ -4,7 +4,7 @@
 @Email:  ctosterhout@alaska.edu
 @Project: ernie
 @Last modified by:   ctosterhout
-@Last modified time: 2020-04-10T18:22:22-08:00
+@Last modified time: 2020-04-13T17:51:06-08:00
 @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
 -->
 
@@ -21,6 +21,15 @@
          v-for="screen in screens"
          v-show="screen.id === currentScreen.id"
          :key="screen.id">
+      <div v-if="screen.type !== 'answer'"
+           class="progress rounded-0">
+        <div class="progress-bar"
+             role="progressbar"
+             :aria-valuenow="progressPercent"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             :style="`width: ${progressPercent}%`"></div>
+      </div>
       <div class="card-body d-flex flex-column justify-content-between">
         <div class="screen-question"
              v-if="screen.type === 'question'">
@@ -185,6 +194,12 @@ export default {
       // Iterate through the values of all the answers and add up all the values
       // Since the initial result will be undefined, return a 0 in that instance
       return _.reduce(_.values(this.answers), (sum, value) => sum + value) || 0
+    },
+    progressPercent: function () {
+      return _.floor((this.indexCurrentScreen + 1) * 100 / this.screens.length)
+    },
+    indexCurrentScreen: function () {
+      return _.findIndex(this.screens, screen => screen.id === this.currentScreen.id)
     }
   },
   methods: {
@@ -196,8 +211,7 @@ export default {
       this.history.pop()
     },
     goNext: function () {
-      const indexCurrentScreen = _.findIndex(this.screens, screen => screen.id === this.currentScreen.id)
-      const indexNextScreen = indexCurrentScreen + 1
+      const indexNextScreen = this.indexCurrentScreen + 1
 
       if (indexNextScreen !== this.screens.length) {
         this.selectChoice(this.screens[indexNextScreen].id)
