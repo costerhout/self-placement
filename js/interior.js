@@ -4,7 +4,7 @@
  * @Email:  ctosterhout@alaska.edu
  * @Project: self-placement
  * @Last modified by:   ctosterhout
- * @Last modified time: 2020-04-09T07:30:52-08:00
+ * @Last modified time: 2020-04-17T17:39:22-08:00
  * @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
  */
 
@@ -37,4 +37,6 @@ Vue.use(ErnieCommon, {
 })
 
 // Begin page render
-ErnieCommon.render()
+ErnieCommon.render({
+  disableScrollDown: true
+})
