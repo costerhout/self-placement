@@ -4,7 +4,7 @@
  * @Email:  ctosterhout@alaska.edu
  * @Project: ernie
  * @Last modified by:   ctosterhout
- * @Last modified time: 2020-04-17T17:29:49-08:00
+ * @Last modified time: 2020-04-20T09:34:34-08:00
  * @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
  */
 
@@ -300,7 +300,7 @@ const screens = [{
       },
       {
         id: 'D',
-        text: 'I am very comfortable asking my professor for help.',
+        text: 'I am very comfortable asking my professor and others for help.',
         value: 3
       }
     ]
