@@ -4,7 +4,7 @@
  * @Email:  ctosterhout@alaska.edu
  * @Project: ernie
  * @Last modified by:   ctosterhout
- * @Last modified time: 2020-04-20T09:34:34-08:00
+ * @Last modified time: 2020-04-23T17:08:15-08:00
  * @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
  */
 
@@ -440,12 +440,13 @@ const screens = [{
       }
     ],
     text: `
-      <h3>Does this seem correct?</h3>
-      <p>After reading the descriptions of the three courses and reviewing your survey results, determine which course best matches your current abilities. WRTG 090, WRTG 110 or WRTG 111. Mark this down to share with your advisor.</p>
-      <h3>Have you already completed the math placement test?</h3>
-      <p>If you have already completed your math placement test you are ready to schedule a registration appointment using our <a href="https://docs.google.com/forms/d/e/1FAIpQLSejn1bT2glFikkfd5EaT9kSl8qSyTgmJF-cnplu0KBcP3QRtQ/viewform?usp=sf_link">contact form</a>.</p>
+      <h3>Confirm your self-placement recommendation</h3>
+      <p>To make sure that this recommendation is appropriate for you, carefully consider the course descriptions and student skills above. Your recommended course should be the one that best matches your current abilities. When you are ready, confirm your choice of WRTG 090, WRTG 110, or WRTG 111. You will share this choice with your advisor once you have completed the additional placement steps below.</p>
 
-      <h3>If you have not already completed the ALEKS Math Placement Test</h3>
+      <h3>Have you already completed the <em>ALEKS Math Placement Test</em>?</h3>
+      <p>If you have already completed your math placement test, you are now ready to schedule a registration appointment. If you know who your advisor is please contact them directly to schedule an appointment; if you are uncertain who your advisor is please use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSejn1bT2glFikkfd5EaT9kSl8qSyTgmJF-cnplu0KBcP3QRtQ/viewform?usp=sf_link">contact form</a> and your advisor will be in touch soon.</p>
+
+      <h3>If you have not already completed the <em>ALEKS Math Placement Test</em></h3>
       <p>All new students who have not earned college credit for math or a <a href="http://catalog.uas.alaska.edu/registration/credit-by-examination/#advancedplacementcreditthroughcollegeentranceexaminationboardceebtext">qualifying AP score</a> must complete the online math placement assessment. The UA math placement assessment is through <a href="https://www.alaska.edu/aleks/">ALEKS</a> (UA login required). It is a fully automated, adaptive system that covers material from basic math through pre-calculus.</p>
 
       <p><em>Students can take this assessment up to 5 times. We encourage every student to complete the assessment at least twice.</em></p>
