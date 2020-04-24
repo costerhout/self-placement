@@ -22,9 +22,9 @@
       </div>
       <div class="card-body">
         <ul class="list-unstyled">
-          <li>Critically interpret and evaluate academic texts and your own WRTG.</li>
+          <li>Critically interpret and evaluate academic texts and your own writing.</li>
           <li>Learn persuasive techniques for use in basic academic essays.</li>
-          <li>Create a portfolio of 3–4 brief academic essays, shaped by effective WRTG processes such revision, class discussion, and using additional texts for support.</li>
+          <li>Create a portfolio of 3–4 brief academic essays, shaped by effective writing processes such revision, class discussion, and using additional texts for support.</li>
         </ul>
       </div>
     </div>
@@ -52,9 +52,9 @@
       </div>
       <div class="card-body">
         <ul class="list-unstyled">
-          <li>May have never written an essay, or may not have developed any WRTG of two or more typed pages in many years.</li>
+          <li>May have never written an essay, or may not have developed any writing of two or more typed pages in many years.</li>
           <li>Haven’t read printed works of several pages, or may not have in several years.</li>
-          <li>May have grammar and mechanics issues in their WRTG.</li>
+          <li>May have grammar and mechanics issues in their writing.</li>
         </ul>
       </div>
     </div>
@@ -67,7 +67,7 @@
         <ul class="list-unstyled">
           <li>Have written essays before, but they may have been short (1–2 pages) or it may have been many years ago.</li>
           <li>Have read printed works before, but not regularly, or not in many years.</li>
-          <li>May have minor grammar and mechanics issues in their WRTG, but are aware of them to some extent.</li>
+          <li>May have minor grammar and mechanics issues in their writing, but are aware of them to some extent.</li>
         </ul>
       </div>
     </div>
@@ -80,7 +80,7 @@
         <ul class="list-unstyled">
           <li>Have written several essays of three or more typed pages.</li>
           <li>Have read academic texts of several pages or more regularly in previous classes.</li>
-          <li>Able to fix proofreading and grammar issues in others’ WRTG and their own.</li>
+          <li>Able to fix proofreading and grammar issues in others’ writing and their own.</li>
           <li>Able to stay focused while working independently and with others, in class and online.</li>
           <li>Willing to stick with a project, developing it over multiple drafts.</li>
           <li>Able to recognize when professors’ help is needed, and willing to ask for it.</li>
@@ -95,7 +95,7 @@
 <style lang="scss" scoped>
 @import '~ernie-theme/scss/modules/bootstrap-extend';
 
-li { 
+li {
     margin: 1rem 0;
 }
 
