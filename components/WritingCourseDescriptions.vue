@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <h3 class="mt-4 text-center">Typical Student Skills</h3>
+  <h3 class="mt-5 text-center">Typical Student Skills</h3>
 
   <div class="card-group">
     <div class="card" :class="classActive('wrtg-090')">
