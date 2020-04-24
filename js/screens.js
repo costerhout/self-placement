@@ -4,7 +4,7 @@
  * @Email:  ctosterhout@alaska.edu
  * @Project: ernie
  * @Last modified by:   ctosterhout
- * @Last modified time: 2020-04-23T17:08:15-08:00
+ * @Last modified time: 2020-04-23T17:19:45-08:00
  * @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
  */
 
@@ -15,7 +15,8 @@ const screens = [{
     text: `
     <p>In this part, you&#8217;ll reflect on your familiarity and comfort level with the work students do in writing courses. In Part 2, you&#8217;ll read a short essay that represents a typical reading in a WRTG 111 course. After reading the sample essay, you&#8217;ll answer a set of questions about how confident you would feel completing assignments about an essay like this in class.</p>
     <p>After completing the Directed Self-Placement you'll be presented with a recommendation on the course along with the course descriptions for WRTG 090, 110, and 111.</p>
-    <p>Remember, the <em>Directed Self-Placement</em> process is not a test. Rather, the questions will help you assess how your abilities fit with each writing course. Your professors will make a final placement decision based on your first assignments in class. If you have any questions, please contact your advisor using the form at the end of the <em>Directed Self-Placement</em>.</p>
+    <p>Remember, the <em>Directed Self-Placement</em> process is not a test. Rather, the questions will help you assess how your abilities fit with each writing course, and after completing the Directed Self-Placement, you'll be presented with a recommendation on which course to take.</p>
+    <p>If you have any questions, please contact your advisor using the form at the end of the <em>Directed Self-Placement</em>.</p>
     <p class="alert alert-secondary">Use the navigation buttons (left and right arrows) below to advance to the next screen, or go back to a previous screen. Use the reset button (circular arrow) to go back to the beginning and start over.</p>
     `
   },
