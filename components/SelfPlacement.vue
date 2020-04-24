@@ -4,7 +4,7 @@
 @Email:  ctosterhout@alaska.edu
 @Project: ernie
 @Last modified by:   ctosterhout
-@Last modified time: 2020-04-17T16:30:39-08:00
+@Last modified time: 2020-04-21T08:59:05-08:00
 @License: Released under MIT License. Copyright 2020 University of Alaska Southeast.  For more details, see https://opensource.org/licenses/MIT
 -->
 
@@ -71,9 +71,7 @@
           </div>
           <button v-if="history.length > 1"
                   @click="reset()"
-                  class="btn btn-outline-secondary btn-circle mx-1 border-0"><span class="sr-only">Reset</span>
-            <Icon name="undo-alt"
-                  scale="1.35" /></button>
+                  class="btn btn-outline-secondary mx-1">Restart</button>
         </div>
       </div>
     </div>
