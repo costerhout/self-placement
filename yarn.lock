@@ -4506,9 +4506,9 @@ entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.0.0.tgz#68d6084cab1b079767540d80e56a39b423e4abf4"
   integrity sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
 
-"ernie-build@git+https://github.alaska.edu/ctosterhout/ernie-build#v0.1.4":
-  version "0.1.4"
-  resolved "git+https://github.alaska.edu/ctosterhout/ernie-build#0de4a7ff4273aed78d9e39c2fe05116fc285dab0"
+"ernie-build@git+https://github.alaska.edu/ctosterhout/ernie-build#v0.1.5":
+  version "0.1.5"
+  resolved "git+https://github.alaska.edu/ctosterhout/ernie-build#2cbafc5d5cda82f93b77757839617a7be7e6bb20"
   dependencies:
     aws-sdk "^2.594.0"
     css-loader "^1.0.0"
@@ -4535,9 +4535,9 @@ entities@^2.0.0:
     webpack-bundle-analyzer "^3.6.0"
     webpack-node-externals "^1.7.2"
 
-"ernie-core@git+https://github.alaska.edu/ctosterhout/ernie-core#v0.1.3":
-  version "0.1.3"
-  resolved "git+https://github.alaska.edu/ctosterhout/ernie-core#e2e8ec0115ebd15c39416d982ef1f8c7b9f32369"
+"ernie-core@git+https://github.alaska.edu/ctosterhout/ernie-core#v0.1.6":
+  version "0.1.6"
+  resolved "git+https://github.alaska.edu/ctosterhout/ernie-core#44bc5080faec5e7c5d7805bffcc7d03b814d0a37"
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.26"
     "@fortawesome/free-brands-svg-icons" "^5.12.0"
@@ -4566,16 +4566,16 @@ entities@^2.0.0:
     vue-spinner "^1.0.3"
     vuejs-datepicker "^1.6.2"
 
-"ernie-theme@git+https://github.alaska.edu/ctosterhout/ernie-theme#v0.1.2":
-  version "0.1.2"
-  resolved "git+https://github.alaska.edu/ctosterhout/ernie-theme#576d55dfcf68c629c6cc1cb2c9a0b466dc0bdf19"
+"ernie-theme@git+https://github.alaska.edu/ctosterhout/ernie-theme#v0.1.4":
+  version "0.1.4"
+  resolved "git+https://github.alaska.edu/ctosterhout/ernie-theme#a539c090241b901eb011a59eeb6207caf04f3f7c"
   dependencies:
     bootstrap "^4.4.1"
     bootstrap-float-label "^4.0.2"
 
-"ernie@git+https://github.alaska.edu/ctosterhout/ernie#v1.2.1":
-  version "1.2.1"
-  resolved "git+https://github.alaska.edu/ctosterhout/ernie#ead83689aa13c248e9c10ad0cf51c10bb1c5c60c"
+"ernie@git+https://github.alaska.edu/ctosterhout/ernie#v1.2.3":
+  version "1.2.3"
+  resolved "git+https://github.alaska.edu/ctosterhout/ernie#65686c113256e0172f4b1d5d57bdab5fa735d5b8"
 
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
